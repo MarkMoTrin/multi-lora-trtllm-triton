@@ -8,8 +8,9 @@
 #   in the models.
 # ---------------------------------------------------
 
-cd /tensorrtllm_backend/tensorrt_llm/xamples/llama
+cd /tensorrtllm_backend/tensorrt_llm/examples/llama
 BASE_LLAMA_MODEL=/workspace/models/Llama-2-7b-hf
+
 
 python3 convert_checkpoint.py --model_dir ${BASE_LLAMA_MODEL} \
                             --output_dir ./c-model/llama/fp16/1-gpu \

@@ -26,7 +26,7 @@
 
 name: "preprocessing"
 backend: "python"
-max_batch_size: ${triton_max_batch_size}
+max_batch_size: 4
 input [
     {
         name: "QUERY"
@@ -180,7 +180,7 @@ output [
 parameters {
   key: "tokenizer_dir"
   value: {
-    string_value: "${tokenizer_dir}"
+    string_value: "/workspace/models/Llama-2-7b-hf"
   }
 }
 
@@ -214,7 +214,7 @@ parameters: {
 
 instance_group [
     {
-        count: ${preprocessing_instance_count}
+        count: 1
         kind: KIND_CPU
     }
 ]

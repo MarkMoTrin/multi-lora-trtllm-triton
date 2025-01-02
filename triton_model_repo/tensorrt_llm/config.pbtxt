@@ -25,17 +25,17 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 name: "tensorrt_llm"
-backend: "${triton_backend}"
-max_batch_size: ${triton_max_batch_size}
+backend: "tensorrtllm"
+max_batch_size: 4
 
 model_transaction_policy {
-  decoupled: ${decoupled_mode}
+  decoupled: false
 }
 
 dynamic_batching {
-    preferred_batch_size: [ ${triton_max_batch_size} ]
-    max_queue_delay_microseconds: ${max_queue_delay_microseconds}
-    default_queue_policy: { max_queue_size: ${max_queue_size} }
+    preferred_batch_size: [ 4 ]
+    max_queue_delay_microseconds: 0
+    default_queue_policy: { max_queue_size: 0 }
 }
 
 input [
@@ -48,7 +48,7 @@ input [
   },
   {
     name: "encoder_input_features"
-    data_type: ${encoder_input_features_data_type}
+    data_type: TYPE_FP16
     dims: [ -1, -1 ]
     allow_ragged_batch: true
     optional: true
@@ -443,13 +443,13 @@ parameters: {
 parameters: {
   key: "gpt_model_type"
   value: {
-    string_value: "${batching_strategy}"
+    string_value: "inflight_fused_batching"
   }
 }
 parameters: {
   key: "gpt_model_path"
   value: {
-    string_value: "${engine_dir}"
+    string_value: "/workspace/engines/llama_7b_with_lora_qkv/fp16/1-gpu"
   }
 }
 parameters: {
@@ -571,7 +571,7 @@ parameters: {
 parameters: {
   key: "participant_ids"
   value: {
-    string_value: "${participant_ids}"
+    string_value: ""
   }
 }
 parameters: {
