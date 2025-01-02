@@ -1,7 +1,5 @@
-# Ignore the trtllmbackend_folder
 tensorrtllm_backend/*
 
-# Ignore the model folder
 models/*           
 
 loras/*

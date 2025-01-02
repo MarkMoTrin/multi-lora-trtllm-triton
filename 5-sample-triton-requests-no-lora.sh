@@ -1,14 +1,13 @@
 #!/bin/bash
-# ---------------------------------------------------
+# ------------------------------------------------------------------------------
 # Author: Mark Moyou - mmoyou@nvidia.com
 # Credit: Olga Andeeva - NVIDIA
 # Date: 01-02-25
 # Usage:
-#   This script has a sample curl command to send to Triton 
-#   generate endpoint without a lora.
+#   This script has a sample curl command to send to Triton generate endpoint without a lora.
 #   Read more about the endpoint here:
 #   https://github.com/triton-inference-server/server/blob/main/docs/protocol/extension_generate.md
-# ---------------------------------------------------
+# ------------------------------------------------------------------------------
 
 
 # Test base ensemble model without a lora.
