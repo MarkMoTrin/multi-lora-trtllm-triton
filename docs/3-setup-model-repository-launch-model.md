@@ -1,13 +1,8 @@
 # Setup Model Repository for TRT-LLM Backend in Triton
 
-The team has made the model repository setup quite straightforward to get started
+The TensorRTLLM team has made the model repository setup relatively straightforward to get started. Follow the instructions [here](https://github.com/triton-inference-server/tensorrtllm_backend/blob/main/README.md#prepare-the-model-repository)
 
-Follow the instructions [here](https://github.com/triton-inference-server/tensorrtllm_backend/blob/main/README.md#prepare-the-model-repository)
-
-This should be done inside of the Triton-TRTLLM container. 
-
-See file `3-modify-model-repo.sh`, configure it as necessary.  
-All imported configurations are in `repo-config-file.sh`
+This should be done inside of the Triton-TRTLLM container. See file `3-modify-model-repo.sh`, configure it as necessary. All imported configurations are in `repo-config-file.sh`
 
 To confirm that your changes are correct look at the config.pbtxt for the ensemble model and confirm that the max_batch_size is as specified.
 
