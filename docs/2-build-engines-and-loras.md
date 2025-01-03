@@ -12,6 +12,7 @@ Once you run the convert model, you should see an output similar to the one belo
 
 You can double-check that a `c-model` folder was created. Edit the script to build to your specifications.
 
+#### Building Engine
 Note the output directory points to `/engines` which is mounted inside the container and exists at the top level of the repo.
 
 Once your engine is built successfully, you will see the end of the output, as shown below.
@@ -20,6 +21,7 @@ Once your engine is built successfully, you will see the end of the output, as s
 
 Now that the engine file is built, you can continue to convert the Loras into the correct format. 
 
+#### Convert Lora Weights to Compatible Format
 The instructions for converting the Lora weights are [here](https://github.com/triton-inference-server/tensorrtllm_backend/blob/main/docs/lora.md#generate-lora-tensors)
 
 Use the code in `2-run-build-commands.sh` to get the exact commands to convert the loras. Note the paths are absolute with respect to the path structure in the container, based on the launch command.
