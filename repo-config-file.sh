@@ -9,7 +9,7 @@
 #   so you configure once and run all the scripts.
 # ------------------------------------------------------------------------------
 
-# Path to the model from Hugging Face in this example
+# Path inside the container that points to the model
 BASE_MODEL_PATH=/workspace/models/Llama-2-7b-hf
 
 # Engine built from TRT-LLM compilation
@@ -17,15 +17,14 @@ ENGINE_DIR=/workspace/engines/llama_7b_with_lora_qkv/fp16/1-gpu
 TOKENIZER_DIR=/workspace/models/Llama-2-7b-hf
 
 
-# Set to the GPU number you see from nvidia-smi otherwise use all GPUs.
+# Set to the GPU number you see from nvidia-smi otherwise use all GPUs. Alter script as necessary.
 SPECIFIC_GPU=1                            
-
 
 # Define variables
 TRT_LLM_BACKEND_PATH="./tensorrtllm_backend"       # Relative path to tensorrtllm_backend
 HUGGING_FACE_CACHE_PATH="${HOME}/.cache/huggingface"    # Hugging Face cache directory
-PATH_TO_ENGINE="/workspace/engines"                         # Relative path to engines
-WORKSPACE_PATH="/workspace"                                 # Relative path to workspace
+PATH_TO_ENGINE="./engines"                         # Relative path to engines
+WORKSPACE_PATH="./"                                 # Relative path to workspace
 DOCKER_TAG="24.11"                                      # Version tag for the Docker image
 
 

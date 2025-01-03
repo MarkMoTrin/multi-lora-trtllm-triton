@@ -30,6 +30,10 @@ pip3 install tritonclient[all]
 # INFLIGHT_BATCHER_LLM_CLIENT=/workspace/tensorrtllm_backend/inflight_batcher_llm/client/inflight_batcher_llm_client.py
 # TOKENIZER_DIR=/workspace/models/Llama-2-7b-hf
 
+# Pull in the configs.
+source repo-config-file.sh
+
+echo "----------------------------------------"
 echo "TASK_IDS are set to: ${TASK_IDS[@]}"
 echo "LORA_PATHS are set to: ${LORA_PATHS[@]}"
 echo "INFLIGHT_BATCHER_LLM_CLIENT is set to: $INFLIGHT_BATCHER_LLM_CLIENT"
