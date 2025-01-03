@@ -1,10 +1,10 @@
-# Deployment Repo Setup
+# Deployment Repo Overview
 
-The goal is to setup your deployment repo as follows in order to gothrough all the steps
+By the end of the tutorial, your deployment repo will look as follows. The remaning folders you don't see in the repo are generated as you go through the tutorial.
 
 ![alt text](./images/base-repo.png)
 
-The engine folder below has the compiled version of the model
+The engine folder below has the compiled version of the model showing the .engine file.
 
 ![alt text](./images/engines-folder.png)
 
