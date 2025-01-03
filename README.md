@@ -9,7 +9,7 @@ It is an extension to the Lora deployment example [here](https://github.com/trit
 
 [**TensorRTLLM Backend**](https://github.com/triton-inference-server/tensorrtllm_backend/tree/v0.15.0): 0.15.0  
 
-See the [framework compatibility matrix](https://docs.nvidia.com/deeplearning/frameworks/support-matrix/index.html) to see what versions of packages are shipped with Triton
+See the [framework compatibility matrix](https://docs.nvidia.com/deeplearning/frameworks/support-matrix/index.html) to see what versions of TRT-LLM are shipped with Triton
 
 ### High-level steps
 The high-level steps are as follows and correspond mostly to the scripts in the repo:
@@ -23,10 +23,7 @@ The high-level steps are as follows and correspond mostly to the scripts in the 
 - Configure the TRT-LLM backend
 - Deploy the base model in Triton
 - Use the python client (in the Triton py3-sdk container) to send the lora weights to be loaded into Triton
-- Query individual models in Triton with Lora ids 
+- Query individual models in Triton with Lora ids using HTTP
 
+Please see the [docs](./docs) for screenshot examples and the order of the scripts to run.
 
-
-`
-git clone -b v0.15.0 https://github.com/triton-inference-server/tensorrtllm_backend.git
-`
