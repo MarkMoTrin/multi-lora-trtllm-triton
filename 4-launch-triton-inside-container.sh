@@ -1,9 +1,9 @@
 #!/bin/bash
 # ------------------------------------------------------------------------------
-# Filename: launch-triton-inside-container.sh
+# Filename: 4-launch-triton-inside-container.sh
 # Author: Mark Moyou - mmoyou@nvidia.com
 # Credit: Olga Andeeva - NVIDIA
-# Date: 12-19-24
+# Date: 01-03-25
 # Usage:
 #   This script launches Triton Inference Server inside the container Triton 
 #   TRT-LLM container. 
@@ -16,8 +16,6 @@ source repo-config-file.sh
 echo "----------------------------------------"
 echo "Running file $0"
 echo "MODEL_FOLDER: $MODEL_FOLDER"
-
-# # MODEL_FOLDER=/workspace/triton_model_repo
 
 # # 'world_size' is the number of GPUs you want to use for serving. This should
 # # be aligned with the number of GPUs used to build the TensorRT-LLM engine.

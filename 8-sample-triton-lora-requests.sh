@@ -1,12 +1,11 @@
 #!/bin/bash
 # ------------------------------------------------------------------------------
-# Filename: sample-triton-lora-requests.sh
+# Filename: 8-sample-triton-lora-requests.sh
 # Author: Mark Moyou - mmoyou@nvidia.com
 # Credit: Olga Andeeva - NVIDIA
 # Date: 01-02-25
 # Usage:
-#   This script has a sample curl command to send to Triton 
-#   generate endpoint without a lora.
+#   This script has a sample curl commands to send to each Lora Task ID.
 #   Read more about the endpoint here:
 #   https://github.com/triton-inference-server/server/blob/main/docs/protocol/extension_generate.md
 # ------------------------------------------------------------------------------

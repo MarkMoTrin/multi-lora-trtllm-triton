@@ -1,23 +1,13 @@
 #!/bin/bash
-# ---------------------------------------------------
+# ------------------------------------------------------------------------------
+# Filename: 3-modify-model-repo.sh
 # Author: Mark Moyou - mmoyou@nvidia.com
 # Credit: Olga Andeeva - NVIDIA
-# Date: 12-19-24
+# Date: 01-03-25
 # Usage:
-#   This script modifies the Model Configuration file
-# ---------------------------------------------------
-
-# This file has to be run inside of the TRT-LLM Triton Container
-
-# ENGINE_DIR=/workspace/engines/llama_7b_with_lora_qkv/fp16/1-gpu
-# TOKENIZER_DIR=/workspace/models/Llama-2-7b-hf
-# MODEL_FOLDER=/workspace/triton_model_repo
-# TRITON_MAX_BATCH_SIZE=4
-# INSTANCE_COUNT=1
-# MAX_QUEUE_DELAY_MS=0
-# MAX_QUEUE_SIZE=0
-# FILL_TEMPLATE_SCRIPT=/workspace/tensorrtllm_backend/tools/fill_template.py
-# DECOUPLED_MODE=false
+#   This script modifies the Triton Model Configuration file. You will have to 
+#   edit these configurations for your deployment.
+# ------------------------------------------------------------------------------
 
 source repo-config-file.sh
 

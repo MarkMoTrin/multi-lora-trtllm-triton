@@ -1,16 +1,16 @@
 #!/bin/bash
 # ------------------------------------------------------------------------------
-# Filename: run-build-commands.sh
+# Filename: 2-run-build-commands.sh
 # Author: Mark Moyou - mmoyou@nvidia.com
 # Credit: Olga Andeeva - NVIDIA
-# Date: 12-19-24
+# Date: 01-03-25
 # Usage:
-#   This script launches Triton TRT-LLM container to build the engines
-#   in the models.
+#   This script launches executes the build commands to build engine files and 
+#   convert LoRAs to a format that TRT-LLM can consume. Edit the output paths
+#   in the trtllm-build command to match your needs.
 # ------------------------------------------------------------------------------
 
 cd /tensorrtllm_backend/tensorrt_llm/examples/llama
-# BASE_LLAMA_MODEL=/workspace/models/Llama-2-7b-hf
 
 source /workspace/repo-config-file.sh
 
@@ -23,6 +23,7 @@ python3 convert_checkpoint.py --model_dir ${BASE_MODEL_PATH} \
                             --output_dir ./c-model/llama/fp16/1-gpu \
                             --dtype float16
 
+### EDIT #######
 #  Build the engine with TRT-LLM - edit the paramters to match your needs
 trtllm-build --checkpoint_dir ./c-model/llama/fp16/1-gpu \
             --output_dir /engines/llama_7b_with_lora_qkv/fp16/1-gpu \
@@ -46,5 +47,5 @@ python3 /tensorrtllm_backend/tensorrt_llm/examples/hf_lora_convert.py -i \
         /workspace/loras/Japanese-Alpaca-LoRA-7b-v0 -o \
         /workspace/loras/Japanese-Alpaca-LoRA-7b-v0-weights --storage-type float16
 
-
+# Double check that you are in the right directory in case this line does not run.
 python3 ../hf_lora_convert.py -i Japanese-Alpaca-LoRA-7b-v0 -o Japanese-Alpaca-LoRA-7b-v0-weights --storage-type float16

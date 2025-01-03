@@ -12,6 +12,7 @@
 # Pull in the configs.
 source repo-config-file.sh
 
+# Configurations are printed for debugging
 echo "----------------------------------------"
 echo "TRT_LLM_BACKEND_PATH is set to: $TRT_LLM_BACKEND_PATH"
 echo "HUGGING_FACE_CACHE_PATH is set to: $HUGGING_FACE_CACHE_PATH"

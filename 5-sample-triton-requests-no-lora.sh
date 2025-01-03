@@ -1,8 +1,9 @@
 #!/bin/bash
 # ------------------------------------------------------------------------------
+# Filename: 5-sample-triton-requests-no-lora.sh
 # Author: Mark Moyou - mmoyou@nvidia.com
 # Credit: Olga Andeeva - NVIDIA
-# Date: 01-02-25
+# Date: 01-03-25
 # Usage:
 #   This script has a sample curl command to send to Triton generate endpoint without a lora.
 #   Read more about the endpoint here:
@@ -14,6 +15,6 @@
 curl -X POST localhost:8000/v2/models/ensemble/generate -d '{"text_input": "What is machine learning?", "max_tokens": 20, "bad_words": "", "stop_words": ""}'; 
 echo
 
-# This is the expected output
+# EXPECTED OUTPUT
 # {"model_name":"ensemble","model_version":"1","sequence_end":false,"sequence_id":0,"sequence_index":0,"sequence_start":false,"text_output":"What is machine learning? Machine learning is a branch of artificial intelligence that allows computers to learn without being explicitly programmed. Machine"}
 
