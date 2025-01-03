@@ -3,7 +3,7 @@ If you already have your models and loras ready, then skip this step
 
 Follow the instructions [here](https://github.com/triton-inference-server/tensorrtllm_backend/blob/main/docs/lora.md#prepare-tensorrt-llm-engines-with-lora-enable) to download the llama-2-7b base model from Hugging Face
 
-Note you will need a Hugging Face key to download the model
+Note you will need a Hugging Face key to download the model. The screenshot below shows the code from the link above to download your model. 
 ![alt text](./images/huggingface-download.png)
 
 ## Downloading Loras
@@ -25,6 +25,8 @@ Once you download you should have two folders each containing the lora weights
 Make sure you are in the top level folder of this repo, pull the specific version of the repo below.  
 If you are using later versions of Triton, see the [Framework guide](https://docs.nvidia.com/deeplearning/frameworks/support-matrix/index.html) for the TRT-LLM version inside the container
 and use that same tag. In this example, Triton is 24.11 and the TRT-LLM version is 0.15.0; therefore, the backend version should be 0.15.0
+
+This will install the tensorrtllm_backend folder inside of your repo which you will mount to the Triton-TRTLLM container to leverage scripts for converting model files, building engines, and creating the Triton Model Repository.
 
 ```
 git clone -b v0.15.0 https://github.com/triton-inference-server/tensorrtllm_backend.git
